@@ -17,6 +17,7 @@ class CreateAddjobsTable extends Migration
             $table->id();
             $table->string('Cname');
             $table->string('JPname');
+            $table->string('category');
             $table->integer('vacancy');
             $table->longText('Jdescription');
             $table->string('Estatus');

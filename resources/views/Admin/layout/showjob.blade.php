@@ -19,6 +19,7 @@
                             <h3 class="company-name " id="com_name"> {{$data->Cname}} <span style="font-weight: normal;"> </span></h3>
 
                             <!-- IsPWDUserLogin: 0-->
+                            {{$data->category}}
 
 
 

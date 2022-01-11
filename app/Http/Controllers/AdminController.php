@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Addjob;
+use App\Category;
 
 class AdminController extends Controller
 {
@@ -12,7 +13,8 @@ class AdminController extends Controller
     }
 
     public function addjob(){
-        return view('Admin.layout.addjob');
+        $categories=Category::get();
+        return view('Admin.layout.addjob', compact('categories'));
     }
 
     public function save(Request $request){
@@ -20,6 +22,7 @@ class AdminController extends Controller
 
            $Add_job->Cname=$request->Cname;
            $Add_job->JPname=$request->JPname;
+           $Add_job->category=$request->category;
            $Add_job->Vacancy=$request->vacancy;
            $Add_job->Jdescription=$request->Jdescription;
            $Add_job->Estatus=$request->Estatus;
@@ -39,7 +42,10 @@ class AdminController extends Controller
           
     }
     public function show(){
-        $datas=Addjob::get();
+
+        $datas=Addjob::with('user')->get();
+        //dd($datas);
+        //$datas=Addjob::get();
         
         return view('Admin.layout.showjob',compact('datas'));
     }

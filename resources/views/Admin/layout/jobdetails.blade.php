@@ -20,6 +20,8 @@
 
                             <!-- IsPWDUserLogin: 0-->
 
+                            {{$data->category}}
+
 
 
 

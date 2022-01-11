@@ -46,6 +46,25 @@
                                     <input type="text" id="JPname" name="JPname" class="form-control">
 
                                 </div>
+                                
+                                <div class="form-group">
+                                    <label for="inputName">Category Name</label>
+                                    
+                                   
+                                     <select id="category" name="category" class="form-control">
+
+                                     @foreach($categories as $category)
+
+                                     <option >{{$category->name}}</option>
+
+                                     @endforeach
+
+                                     </select>
+                                </div>
+
+                                
+                                
+  
                                 <div class="form-group">
                                     <label for="inputName">Vacancy</label>
                                     <input type="integer" id="vacancy" name="vacancy" class="form-control">
@@ -129,5 +148,5 @@
         <!-- /.content -->
     </div>
 
-
+    
 @endsection
